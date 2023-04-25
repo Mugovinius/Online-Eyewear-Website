@@ -1,0 +1,28 @@
+{%extends 'main/base.html'%}
+{%load static%}
+
+{%block content%}
+    <div class="all-lists">
+        <center>
+            <h1><u>ALL SERVICES</u></h1>
+            <button class="add-product">
+                <a href="{% url 'add-service'%}">Add New Service</a>
+            </button>
+        </center>
+        {%for service in services%}
+            <div class="my-services">
+                <div class="desc">
+                    <h2>Service:{{service.service_name}}</h2>
+                    <p>{{service.description}}</p>
+                    <button class="update-btn">
+                        <a href="{%url 'update-service' service.id%}">Update Service</a>
+                        </button>
+                    <button class="delete-btn">
+                        <a href="{% url 'delete-service' service.id%}">Delete Service</a>
+                    </button>
+                </div>
+                <img src={{service.service_image.url}} class="my-img">
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

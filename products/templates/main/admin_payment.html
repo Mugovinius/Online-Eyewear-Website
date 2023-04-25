@@ -1,0 +1,31 @@
+{% extends 'main/admin.html' %}
+{%load static%}
+
+{%block content%}
+    <center>
+        <h2>PAYMENT DETAILS</h2>
+    
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Order No</th>
+                <th>Phone Number</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            {%for record in orders%}
+                <tr>
+                    <td>{{record.customer}}</td>
+                    <td>{{record.order_no}}</td>
+                    <td>{{record.mobile}}</td>
+                    <td>{{record.total}}</td>
+                    <td>{{record.date}}</td>
+                    <td>
+                        <a href="{% url 'update-payment' record.id %}">Update</a>
+                    </td>
+                </tr>
+            {%endfor%}
+        </table>
+    </center>
+{%endblock%}

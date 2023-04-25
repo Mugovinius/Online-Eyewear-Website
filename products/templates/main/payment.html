@@ -1,0 +1,19 @@
+{%extends 'authenticate/home.html'%}
+{%load static%}
+{%block content%}
+    <button class="back-btn">
+        <a href="{% url 'index'%}"><i class="fa-solid fa-chevron-left "></i>
+            BACK HOME
+        </a>  
+    </button>
+<center>
+    <div class="my-payment">
+        <img src="{%static 'images\download.png' %}" class="mpesa">
+        <h2><u>Pay</u></h2>
+        <p>Amount: Kshs {{payment.amount}}</p>
+        <p>Phone Number: {{payment.mobile}}</p>
+        <button class="pay-btn">
+            <a href="{% url 'payments'%}">Initiate Payment</a>
+        </button>
+</center>
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+{%load static%}
+{%block content%}
+<div class="div-container">
+    <h1>Thankyou for reaching out, we will get back to you shortly.</h1>
+    <a href="{% url 'index'%}" style="text-decoration:none;">
+        <i class="fa-solid fa-chevron-left"></i>
+        Back
+    </a>
+</div>
+{%endblock%}

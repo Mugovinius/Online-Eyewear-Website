@@ -1,0 +1,182 @@
+html{
+    background-color: black;
+}
+table{
+    width: 70%;
+}
+table,th, td{
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    border: 1px solid gray;
+}
+.my-services{
+    margin: 100px;
+    padding: auto;
+    border: 1px solid gray;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.desc{
+    padding: 10px;
+}
+.my-img{
+    max-width: 40%;
+    margin: 10px;
+}
+.update-btn{
+    background-color: olive;
+    padding: 5px;
+    border: transparent;
+    border-radius: 25px;
+    width: 40%;
+}
+.update-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.delete-btn{
+    background-color: red;
+    padding: 5px;
+    border: transparent;
+    border-radius: 25px;
+    width: 40%;
+}
+.delete-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.add-product{
+    float: right;
+    padding: 15px;
+    background-color: olive;
+    border: transparent;
+    border-radius: 25px;
+}
+.add-product a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.myform input{
+    width: 30%;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 5px;
+}
+.myform textarea{
+    width: 30%;
+    border-radius: 25px;
+    padding: 10px;
+}
+.myform label{
+    text-decoration:none;
+}
+.mysubmit{
+    background-color: goldenrod;
+    color: #fff;
+    border: transparent;
+}
+.item-img{
+    max-width: 50%;
+    border-radius: 25px;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 25px;
+}
+.items-desc{
+    text-align:left;
+    
+    width: 500px;
+    padding: 50px;
+    margin-top: 20px;
+}
+.items-desc p{
+    font-size: 1.5rem;
+}
+.btn-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order-category{
+    padding: 5px;
+    margin: 5px;
+    background:transparent;
+    color: #fff;
+    border-radius: 25px;
+    border: transparent;
+}
+.order-category a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1rem;
+}
+.link-img{
+    width: 100px;
+    border-radius: 50%;
+}
+.review-img{
+    max-width: 20%;
+    border-radius: 50%;
+}
+.team-img{
+    max-width: 30%;
+    padding: 10px;
+    border-radius: 25px;
+}
+@media screen and (max-width:550px) {
+    table, th, td{
+        margin: 5px;
+        padding: 10px;
+    }
+    .add-product{
+        float: unset;
+    }
+    .my-services{
+        flex-direction: column-reverse;
+        margin: 20px;
+    }
+    .my-img{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .items{
+        flex-direction: column;
+    }
+    .items-desc{
+        width: auto;
+    }
+    .item-img{
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .link-img{
+        width: 100px;
+    }
+    .team-img{
+        max-width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .myform input{
+        width: 50%;
+    }
+    .myform textarea{
+        width:50%;
+    }
+}

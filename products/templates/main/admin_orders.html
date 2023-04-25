@@ -1,0 +1,31 @@
+{% extends 'main/admin.html' %}
+{%load static%}
+
+{%block content%}
+        <div class="btn-container">
+            <button class="order-category">
+                <a href="{%url 'admin-pending-payment'%}"><img src="{% static 'images\download.png'%}" class="link-img">
+                <br>
+                Pending Payment
+                </a>
+            </button>
+            <button class="order-category">
+                <a href="{%url 'admin-paid-parcel'%}"><img src="{% static 'images\icons8-deliver-food-64.png'%}" class="link-img">
+                <br>
+                Paid Parcels
+                </a>
+            </button>
+            <button class="order-category">
+                <a href="{%url 'admin-delivered'%}"><img src="{% static 'images\icons8-delivered-80.png'%}" class="link-img">
+                <br>
+                Delivered Parcels
+                </a>
+            </button>
+            <button class="order-category">
+                <a href="{%url 'admin-completed'%}"><img src="{% static 'images\icons8-complete-67.png'%}" class="link-img">
+                <br>
+                Collected Parcels
+                </a>
+            </button>
+        </div>
+{%endblock%}

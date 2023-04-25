@@ -1,0 +1,121 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'navbar.css'%}">
+    </head>
+    <body>
+        <nav>
+            <div class="my-logo">
+                <img src="{% static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="logo">
+            </div>
+            <ul class="links">
+                <li>
+                    <a href="{% url 'index'%}" class='active'>HOME</a>
+                </li>
+                <li>
+                    <a href="{%url 'about'%}">ABOUT</a>
+                </li>
+                <li>
+                    <a href="{%url 'contact'%}">CONTACT</a>
+                </li>
+                {%if user.is_superuser%}
+                    <li>
+                        <a href="{% url 'customers'%}">ADMINISTRATOR</a>
+                    </li>
+                {%else%}
+                <li>
+                    <a href="{% url 'all-products'%}">SHOP ALL</a>
+                </li>
+                {%endif%}
+                {%if user.is_superuser%}
+                <li>
+                    <a href="{%url 'list-services'%}">SERVICES</a>
+                </li>
+                <li>
+                    <a href="{%url 'list-team'%}">TEAM</a>
+                </li>
+                <li>
+                    <a href="{%url 'list-stores'%}">STORES</a>
+                </li>
+                {%endif%}
+                {%if user.is_superuser%}
+
+                {%elif user.is_authenticated%}
+                    <li>
+                        <a href="{% url 'my-orders'%}">MY ORDERS</a>
+                    </li>
+                {%endif%}
+                {%if user.is_authenticated%}
+                    <li>
+                        <a href="{% url 'logout'%}">LOGOUT</a>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{% url 'login'%}">LOGIN</a>
+                    </li>
+                {%endif%}
+            </ul>
+            {%if user.is_authenticated%}
+                <button class="cart">
+                    <a href="{%url 'cart'%}">
+                        <i class="fa-solid fa-shopping-cart fa-2x"></i>
+                    </a>
+                </button>
+            {%endif%}
+            <button class="nav-toggle">
+                <i class="fa fa-bars fa-2x"></i>
+            </button>
+        </nav>
+        <aside class="sidebar">
+            <div class="our-logo">
+                <img src="{% static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="logo">
+                <button class="close-btn">
+                    <i class="fa fa-close fa-2x"></i>
+                </button>
+            </div>
+            <ul class="mylinks">
+                <li>
+                    <a href="{% url 'index'%}">HOME</a>
+                </li>
+                <li>
+                    <a href="{%url 'about'%}">ABOUT</a>
+                </li>
+                <li>
+                    <a href="{%url 'contact'%}">CONTACT</a>
+                </li>
+                {%if user.is_superuser%}
+                    <li>
+                        <a href="{% url 'customers'%}">ADMINISTRATOR</a>
+                    </li>
+                {%else%}
+                <li>
+                    <a href="{% url 'all-products'%}">SHOP ALL</a>
+                </li>
+                {%endif%}
+                {%if user.is_superuser%}
+                <li>
+                    <a href="{%url 'list-services'%}">SERVICES</a>
+                </li>
+                <li>
+                    <a href="{%url 'list-team'%}">TEAM</a>
+                </li>
+                <li>
+                    <a href="{%url 'list-stores'%}">STORES</a>
+                </li>
+                {%endif%}
+                {%if user.is_authenticated%}
+                    <li>
+                        <a href="{% url 'logout'%}">LOGOUT</a>
+                    </li>
+                {%else%}
+                    <li>
+                        <a href="{% url 'login'%}" target="_parent">LOGIN</a>
+                    </li>
+                {%endif%}
+            </ul>
+        </aside>
+        <script src="{% static 'navbar.js'%}"></script>
+    </body>
+</html>

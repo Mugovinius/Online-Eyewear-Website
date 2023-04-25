@@ -1,0 +1,82 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <meta name="author" content="Vinicious"/>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{% static 'fontawesome-free-6.2.0-web\css\all.min.css'%}"/>
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'footer.css'%}">
+    </head>
+    <body>
+        <div class="footer-container">
+            <div class="reach-us">
+                <h1>GET IN TOUCH WITH US TODAY!</h1>
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    0111-729-860
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    VANESSAMUTESH@GMAIL.COM
+                </p>
+                <img src="{% static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="my-img">
+            </div>
+            <div class="my-links">
+                <div>
+                    <h2>MENU</h2>
+                    <p>
+                        <a href="{%url 'index'%}">HOME</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'about'%}">ABOUT</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'contact'%}">CONTACT</a>
+                    </p>
+                    <p>
+                        <a href="{%url 'all-products'%}">SHOPALL</a>
+                    </p>
+                </div>
+                <div>
+                    <h2>SOCIAL MEDIA</h2>
+                    <p>
+                        <a href="https://www.facebook.com/vinius.muthii.9">
+                            FACEBOOK
+                            <i class="fab fa-facebook" style="font-size:1.5rem;"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.twitter.com/im_vinicious">
+                            TWITTER
+                            <i class = "fab fa-twitter fa-2x" style="font-size:1.5rem;"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.instagram.com/online_eyewear.ke/">
+                            INSTAGRAM
+                            <i class="fab fa-instagram fa-2x" style="font-size:1.5rem;"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/vinius-muthii-66086423b/">
+                            LINKED IN
+                            <i class="fab fa-linkedin fa-2x" style="font-size:1.5rem;"></i>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/Mugovinius">
+                            GITHUB
+                            <i class="fab fa-github fa-2x" style="font-size:1.5rem;"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="credits">
+            <p> Copyright 2023 Designed By <a href="#">Group 10</a></p>
+        </div>
+    </body>
+</html>

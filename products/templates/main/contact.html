@@ -1,0 +1,168 @@
+{%extends 'main/utilities-contact.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <body>
+        {%block content%}
+            <div class="contact-container">
+                <div class="desc">
+                    <h3>CONTACT US</h3>
+                    <h2>GET IN TOUCH</h2>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        0111-729-860
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        VANESSAMUTESH@GMAIL.COM
+                    </p>
+                </div>
+                <div class="contact-form">
+                    <form method=POST action="{%url 'send-message'%}">
+                        {% csrf_token %}
+                        <div class="our-inputs">
+                            <input type="text" name="full-name" placeholder="FULL NAME" class="my-inputs">
+                            <input type="email" name="email" placeholder="EMAIL ADDRESS" class="my-inputs">
+                            <input type="text" name="phone" placeholder="PHONE NUMBER" class="my-inputs">
+                            <input type="text" name="subject" placeholder="SUBJECT" class="my-inputs">
+                        </div>
+                        <textarea cols="20" rows="5" placeholder="PLEASE TYPE YOUR MESSAGE HERE..." class="my-textarea"></textarea>
+                        <br>
+                        <input type="submit" value="SEND MESSAGE" class="my-submit">
+                    </form>
+                </div>
+            </div>
+            <div class="our-faqs">
+                <center>
+                    <h3>FAQS</h3>
+                    <h2>HAVE ANY QUESTIONS?</h2>
+                    <p>
+                        Commonly asked questions....
+                    </p>
+                </center>
+            </div>
+            <div class="faq-container">
+                <div class="indiv-faq">
+                    <div>
+                        <h1>HOW MANY YEARS OF EXPERIENCE DOES YOUR FIRM HAVE?</h1>
+                        <p id="my-toggle">
+                            We started back in 2018 and have served millions of customers all over the world. We have 
+                            gained first-hand experience dealing with customers and therefore have more intel about our customers wishes.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>DO YOU DELIVER EYEWEAR PRODUCTS OUTSIDE KENYA?</h1>
+                        <p id="my-toggle">
+                            We partner with other global organizations and ensure that your eyewear product is delivered anywhere 
+                            our customers are located globally.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>DO YOU OFFER COMPESATION AFTER BREAKAGES?</h1>
+                        <p id="my-toggle">
+                            We ensure good packaging of our products and carefully handling during and after delivery so that the product
+                            reaches to its respective customer in one piece. In case of breakages during this process, we offer full compensation
+                            of glasses. However, if breakages occur after delivery in customers care, compensation will not be considered.
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="indiv-faq">
+                    <div>
+                        <h1>WHERE ARE YOUR STORES LOCATED?</h1>
+                        <p id="my-toggle">
+                            We currently have two stores located in Egerton University Gate, Njoro and the other in CBD Nakuru city in Kenya.
+                            We also deliver glasses locally in Kenya and also globally where our customers are located. You are welcome at our stores today. 
+                        </p>
+                    </div>
+                    <div>
+                        <button class="up-down">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="offices">
+                <h2>VISIT OUR STORES TODAY</h2>
+            </div>
+            <div class="office-container">
+                {%for store in stores%}
+                    <div class="indiv-office">
+                        <img src={{store.office_pic}} class="office-pic">
+                        <h2>{{store.city}}</h2>
+                        <hr>
+                        <div class="more-info">
+                            <span class="info">
+                                <h3>ADDRESS</h3>
+                                <h3>{{store.physical_address}}</h3>
+                            </span>
+                            <span class="info">
+                                <h3>CONTACT</h3>
+                                <h3>{{store.phone_number}}</h3>
+                                <h3>{{store.email_address}}</h3>
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="socials">
+                <center>
+                    <h2>FOLLOW US</h2>
+                    <h1>FOLLOW US ON INSTAGRAM</h1>
+                </center>
+            </div>
+            <div class="our-gallery">
+                <div class="gallery-div">
+                        <img src="{%static 'images\sun.glasses.shop-20230419-0002.jpg'%}" class="image1">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/online_eyewear.ke"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                </div>
+                <div class="gallery-container">
+                    <div class="more-gallery">
+                        <img src="{%static 'images\sun.glasses.shop-20230419-0001.jpg'%}" class="image2">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/online_eyewear.ke"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\sun.glasses.shop-20230419-0003.jpg'%}" class="image3">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/online_eyewear.ke"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\eyedictive_sunglasses-20230419-0002.jpg'%}" class="image4">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/online_eyewear.ke"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                    <div class="more-gallery">
+                        <img src="{%static 'images\sun.glasses.shop-20230419-0004.jpg'%}" class="image5">
+                        <div class="my-img">
+                            <a href="https://www.instagram.com/online_eyewear.ke"><i class="fab fa-instagram fa-4x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {%endblock%}
+    </body>
+</html>

@@ -1,0 +1,326 @@
+html{
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+
+}
+.my-form{
+    border: 2px dashed;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+}
+.my-form label{
+    font-size: 1.2rem;
+}
+.my-input{
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    width: 70%;
+}
+.my-submit{
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color:olive;
+    color: #fff;
+    border-radius: 25px;
+    width: 50%;
+    border: transparent;
+}
+.div-1{
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.register-btn{
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color:orangered;
+    color: #fff;
+    border-radius: 25px;
+    width: 50%;
+    border: transparent;
+}
+.register-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.myform{
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+}
+.myform1{
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid goldenrod;
+}
+.myform ul{
+    list-style-type: none;
+}
+.myform label{
+    font-size: 1.2rem;
+    display: block;
+}
+.myform input{
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    width: 30%;
+}
+.mysubmit{
+    width:20%;
+    background-color: olive;
+    color: #fff;
+    border: transparent;
+}
+.cart-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+.cart-img{
+    max-width: 10%;
+    border-radius: 50%;
+}
+.cart-close{
+    border: transparent;
+    background: transparent;
+}
+.item-img{
+    max-width: 30%;
+    border-radius: 25px;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid goldenrod;
+    border-radius: 25px;
+}
+.items-desc{
+    text-align:left;
+    
+    width: 500px;
+    padding: 50px;
+    margin-top: 20px;
+}
+.items-desc p{
+    font-size: 1.5rem;
+}
+.cart-remove{
+    padding: 20px;
+    background-color: red;
+    font-size: 1.5rem;
+    border: transparent;
+    border-radius: 25px;
+    margin: 5px;
+}
+.cart-remove a{
+    text-decoration: none;
+    color: #fff;
+}
+.cart-order{
+    padding: 20px;
+    background-color: olive;
+    font-size: 1.5rem;
+    border: transparent;
+    border-radius: 25px;
+    margin: 5px;
+}
+.cart-order a{
+    text-decoration: none;
+    color: #fff;
+}
+.order-all{
+    padding: 20px;
+    background-color: olive;
+    font-size: 1.5rem;
+    border: transparent;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+}
+.order-all a{
+    text-decoration: none;
+    color: #fff;
+}
+.totals{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#my-total{
+    font-size: 2rem;
+}
+#actual-total{
+    font-size: 2rem;
+    text-decoration: underline;
+}
+.fom{
+    border: 1px solid goldenrod;
+    border-radius: 25px;
+    padding: 10px;
+}
+.fom input{
+    border-radius: 25px;
+}
+.fomsubmit{
+    background-color: olive;
+    color: #fff;
+    border: transparent;
+    padding: 10px;
+    font-size: 1rem;
+}
+.order-item1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+.order-item2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+.order-img{
+    max-width: 20%;
+    border-radius: 25px;
+}
+.details{
+    margin-top: 20px;
+}
+.sidebar{
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+    transform: translate(-100%);
+    transition: all 0.3s linear;
+    background: black;
+    z-index: 2;
+}
+.show-sidebar{
+    transform: translate(0);
+}
+.side-form{
+    padding: 20px;
+    color: #fff;
+}
+.side-form input{
+    background-color: #fff;
+}
+.side-form p{
+    color: #fff;
+}
+.btn-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order-category{
+    padding: 5px;
+    margin: 5px;
+    background:transparent;
+    color: #fff;
+    border-radius: 25px;
+    border: transparent;
+}
+.order-category a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1rem;
+}
+.link-img{
+    width: 100px;
+    border-radius: 50%;
+}
+.update-quantity{
+    background-color: goldenrod;
+    border: transparent;
+    border-radius: 25px;
+    padding: 10px;
+}
+.update-quantity a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+.pay-btn{
+    background-color: goldenrod;
+    border-radius: 25px;
+    border: transparent;
+    padding: 10px;
+}
+.pay-btn a{
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+}
+.quantity-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+}
+@media screen and (max-width:992px) {
+    .item-img{
+        max-width: 50%;
+    }
+    .items-desc{
+        width: auto;
+        padding: 10px;
+    }
+    .items-desc button{
+        display: block;
+    }
+}
+@media screen and (max-width:600px) {
+    .cart-img{
+        max-width: 20%;
+    }
+    .items{
+        flex-direction: column;
+    }
+    .items-desc{
+        width: auto;
+        padding: 30px;
+        margin-top: 5px;
+    }
+    .item-img{
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+    }
+    .btn-container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .link-img{
+        width: 100px;
+    }
+    .myform input{
+        width: 60%;
+    }
+    .order-img{
+        max-width: 40%;
+    }
+}

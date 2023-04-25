@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{%load static%}
+    {%block content%}
+            {% if searched %}
+                <div class="div-container">
+                    <h1>Search Results</h1>
+                    <a href="{% url 'index'%}" style="text-decoration:none;">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        Back
+                    </a>
+                </div>
+                <br>
+                <div class="products-container">
+                    {%for product in products%}
+                    <div class="products">
+                        <img src={{product.product_image.url}} class="product-img">
+                        <h2>Name: {{product.product_name}}</h2>
+                        <h3>Category: {{product.category}}</h3>
+                        <h3>Price: Kshs {{product.product_price}}</h3>
+                        <p>{{product.description}}</p>
+                        {%if user.is_authenticated%}
+                            <button class="add-cart">
+                                <a href="{%url 'add-to-cart' product.id %}">Add To Cart</a>
+                            </button>
+                        {%else%}
+                            <button class="add-cart">
+                                <a href="{%url 'login'%}">Add To Cart</a>
+                            </button>
+                        {%endif%}
+                    </div>
+                    {%endfor%}
+                </div>
+            {%else%}
+                <h1>Search a venue...</h1>
+            {%endif%}
+    {%endblock%}
+

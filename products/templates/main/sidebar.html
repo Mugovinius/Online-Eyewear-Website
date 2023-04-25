@@ -1,0 +1,22 @@
+{% extends 'authenticate/home.html'%}
+
+{%block content%}
+    <center>
+        <h2>Place Order</h2>
+        <form method="post"action="" class="fom">
+            {% csrf_token %}
+            <div class="order-item1">
+                <img src={{cart.product.product_image.url}} class="order-img">
+                <div class="details">
+                    <p>Product Name: {{cart.product.product_name}}</p>
+                    <p>Brand: {{cart.product.product_brand}}</p>
+                    <p>Price: {{cart.price}}</p>
+                    <p>Quantity: {{cart.quantity}}</p>
+                    <p>Total: {{cart.total}}</p>
+                </div>
+            </div>
+            {{form.as_p}}
+            <input type="submit" value="Place Order" class="fomsubmit">
+        </form>
+    </center>
+{%endblock%}

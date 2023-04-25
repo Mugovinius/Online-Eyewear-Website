@@ -1,0 +1,140 @@
+html{
+    background-color: black;
+}
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    left: 0;
+    position: relative;
+    z-index: 1;
+}
+.nav-toggle{
+    display: none;
+    color: #fff;
+}
+.my-logo{ 
+    position: relative;
+    left: 20px;
+    top:5px;
+}
+.logo{
+    width: 200px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+.links li{
+    display: inline-block;
+    padding: 10px;
+}
+.links a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.2rem;
+    border-bottom: 3px solid transparent;
+    transition: 0.5s;
+}
+.links a:hover{
+    border-bottom: 3px solid goldenrod;
+    width: 100%;
+}
+.links a:active{
+    background-color: goldenrod;
+    border-radius: 25px;
+}
+.links a.active{
+    color: goldenrod;
+}
+.links li:hover{
+    background-color: goldenrod;
+    border-radius: 25px;
+}
+.cart{
+    border: transparent;
+    background: transparent;
+    margin: 10px;
+    color: #fff;
+}
+.dropheader{
+    color: #fff;
+    font-size: 1.2rem;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    top: 5p;
+    background-color:orchid;
+    z-index: 1;
+}
+.dropdown-content a{
+    padding: 5px;
+    color: black;
+    text-align: center;
+    
+}
+.dropdown:hover .dropdown-content{
+    display:inline-block;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+    transform: translate(-100%);
+    transition: all 0.3s linear;
+    background: black;
+    z-index: 2;
+}
+.show-sidebar{
+    transform: translate(0);
+}
+.mylinks a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: left;
+}
+.mylinks li{
+    list-style-type: none;
+    padding: 15px;
+}
+.our-logo{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.close-btn{
+    color: #fff;
+    background:transparent;
+    border: transparent;
+}
+@media screen and (max-width:992px) {
+    .nav-toggle{
+        display: block;
+        border: transparent;
+        background: transparent;
+        margin: 10px;
+    }
+    .logo{
+        width: 120px;
+    }
+    .cart{
+        padding: 0;
+    }
+    .links{
+        display: none;
+    }
+}
+@media screen and (max-width:550px) {
+    .sidebar{
+        width: 100%;
+    }
+}

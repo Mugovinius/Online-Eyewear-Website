@@ -1,0 +1,23 @@
+{%extends 'main/orders.html'%}
+{%load static%}
+
+{%block content%}
+    <div class="cart-items">
+        {%for order in order_items %}
+            <div class="items">
+                <img src={{order.product.product_image.url}} class="item-img">
+                <div class="items-desc">
+                    <p>Product Name: {{order.product.product_name}}</p>
+                    <p>Product Brand: {{order.product.product_brand}}</p>
+                    <button class="update-btn">
+                        <a href="{%url 'review-order' order.id %}">Review Order</a>
+                    </button>
+                </div>
+            </div>
+            {% empty %}
+            <center>
+                <p>No Current Orders</p>
+            </center>
+        {%endfor%}
+    </div>
+{%endblock%}

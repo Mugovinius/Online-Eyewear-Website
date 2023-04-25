@@ -1,0 +1,109 @@
+html{
+    background-color: black;
+} 
+#header{
+    color: #fff;
+    text-align: center;
+}
+.hero-1{
+    width: fit-content;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.7;
+}
+.my-form{
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+}
+.my-form label{
+    font-size: 1.2rem;
+    color: #fff;
+}
+.my-input{
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    width: 30%;
+}
+.my-submit{
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color:olive;
+    color: #fff;
+    border-radius: 25px;
+    width: 15%;
+    border: transparent;
+}
+.div-1{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.div-1 h3{
+    color: #fff;
+}
+.register-btn{
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color:orangered;
+    color: #fff;
+    border-radius: 25px;
+    width: 20%;
+    border: transparent;
+}
+.register-btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.myform{
+    border: 2px dashed;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 20px;
+}
+.myform label{
+    font-size: 1.2rem;
+    display: block;
+    color: #fff; 
+}
+.myform input{
+    padding: 10px;
+    border-radius: 25px;
+    margin: 20px;
+    width: 40%;
+}
+.myform div{
+    color: #fff;
+}
+.myform div ul{
+    list-style-type: none;
+}
+.back-btn{
+    color: black;
+    background:#fff;
+    border: transparent;
+    border-radius: 25px;
+    padding: 5px;
+}
+.back-btn a{
+    text-decoration: none;
+}
+@media screen and (max-width:676px) {
+    .my-input{
+        width: 50%;
+    }
+    .my-submit{
+        width: 40%;
+    }
+    .myform input{
+        width:70%;
+    }
+}

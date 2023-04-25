@@ -1,0 +1,15 @@
+{%extends 'main/admin.html'%}
+{%load static%}
+
+{%block content%}
+    <center>
+        <div class="all-forms">
+            <h1>ADD PRODUCT</h1>
+            <form action="" method="POST" enctype="multipart/form-data" class="myform">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="ADD PRODUCT" class="mysubmit">
+            </form>
+        </div>
+    </center>
+{%endblock%}

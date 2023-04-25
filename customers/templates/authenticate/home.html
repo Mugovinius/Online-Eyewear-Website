@@ -1,0 +1,25 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport",content="width=device_width,initial_scale=1.0">
+        <meta name="author" content="vinicious">
+        <meta charset="UTF-8">
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{%static 'fontawesome-free-6.2.0-web\css\all.min.css'%}">
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    </head>
+    <body>
+        {%if messages %}
+            {%for message in messages%}
+                {{message}}
+            {%endfor%}
+        {%endif%}
+        {%block content%}
+
+        {%endblock%}
+        <script src="{%static 'home.js'%}"></script>
+    </body>
+</html>
+

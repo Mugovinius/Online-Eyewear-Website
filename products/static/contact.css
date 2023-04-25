@@ -1,0 +1,290 @@
+html{
+    background-color: black;
+}
+.contact-container{
+    position: relative;
+    background-image: url('images/ew4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    color: #fff;
+    padding: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.desc h2{
+    font-size: 4rem;
+}
+.desc h3{
+    font-size: 2rem;
+}
+.desc p{
+    font-size: 1.5rem;
+}
+.contact-form{
+    margin-top: 200px;
+}
+.our-inputs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.my-inputs{
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    border: transparent;
+    border-bottom: 2px solid;
+    background-color: black;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.my-textarea{
+    margin: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    border: transparent;
+    border-bottom: 2px solid;
+    background-color: black;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.my-submit{
+    padding: 20px;
+    border: transparent;
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.our-faqs{
+    padding: 10px;
+    margin: 5px;
+    color: #fff;
+}
+.our-faqs h2{
+    font-size: 3rem;
+}
+.our-faqs p{
+    font-size: 1.2rem;
+}
+.faq-container{
+    padding: 10px;
+    margin: 10px;
+}
+.indiv-faq{
+    border-bottom: 1px solid #fff;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+}
+#my-toggle{
+    display: none;
+    font-size: 1.2rem;
+}
+p{
+    color: #fff;
+}
+.show-faq #my-toggle{
+    display: block;
+}
+.show-faq .up-down{
+    transform: rotate(180deg);
+}
+.offices{
+    background-color: black;
+    color: #fff;
+    padding: 20px;
+}
+.offices h2{
+    font-size: 3rem;
+    text-align: center;
+}
+.office-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+    background-color: black;
+    color: #fff;
+}
+.office-pic{
+    max-width: 100%;
+}
+.more-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.info{
+    width: 50%;
+    margin: 10px;
+}
+.indiv-office{
+    margin: 15px;
+}
+.socials{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:black;
+    color: #fff;
+}
+.socials h1{
+    font-size: 5rem;
+    color: #fff;
+}
+.socials h2{
+    color: #fff;
+}
+.our-gallery{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.gallery-div{
+    width: 550px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+}
+.gallery-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: 10px;
+    position: relative;
+}
+.more-gallery{
+    position: relative;
+}
+.image1{
+    max-width: 100%;
+}
+.my-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.gallery-div:hover .my-img{
+    opacity: 1;
+    color: #fff;
+}
+.more-gallery:hover .my-img{
+    opacity: 1;
+    color: #fff;
+}
+.gallery-div:hover .image1{
+    opacity: 0.5;
+}
+.more-gallery:hover .image2{
+    opacity: 0.5;
+}
+.more-gallery:hover .image3{
+    opacity: 0.5;
+}
+.more-gallery:hover .image4{
+    opacity: 0.5;
+}
+.more-gallery:hover .image5{
+    opacity: 0.5;
+}
+.image2{
+    max-width: 90%;
+    margin-bottom: 5px;
+    position: relative;
+}
+.image3{
+    max-width: 90%;
+    position: relative;
+}
+.image4{
+    max-width: 90%;
+    position: relative;
+}
+.image5{
+    max-width: 90%;
+    position: relative;
+}
+
+@media screen and (max-width:992px) {
+    .container{
+        margin-top: 70px;
+    }
+    .contact-container{
+        flex-direction: column;
+        padding: 5px;
+    }
+    .contact-form{
+        margin-top: 10px;
+    }
+    .more-info{
+        flex-direction: column;
+    }
+    .my-inputs{
+        width: 200px;
+    }
+    .office-container{
+        flex-direction: column;
+    }
+    .our-gallery{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width:550px) {
+    .our-inputs{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .my-inputs{
+        width: auto;
+    }
+    .my-textarea{
+        width: auto;
+    }
+    .our-faqs h2{
+        font-size: 2rem;
+    }
+    .up-down{
+        margin-top: 100px;
+    }
+    .gallery-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .gallery-div{
+        width: auto;
+    }
+    .image1{
+        max-width: 95%;
+    }
+    .image2{
+        max-width: 95%;
+    }
+    .image3{
+        max-width: 95%;
+    }
+    .image4{
+        max-width: 95%;
+    }
+    .image5{
+        max-width: 95%;
+    }
+    .socials{
+        width: auto;
+    }
+    .socials h1{
+        font-size: 2rem;
+    }
+    .info{
+        width: auto;
+        margin: 5px;
+    }
+}

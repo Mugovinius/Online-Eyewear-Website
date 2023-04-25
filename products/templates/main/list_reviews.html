@@ -1,0 +1,21 @@
+{%extends 'main/base.html'%}
+{%load static%}
+
+{%block content%}
+    <div class="all-lists">
+        <center>
+            <h1><u>ALL REVIEWS</u></h1>
+        </center>
+        {%for review in reviews%}
+            <div class="my-services">
+                <div class="desc">
+                    <h2>Name:{{review.first_name}} {{review.last_name}}</h2>
+                    <h3>Product: {{review.product_name}}</h3>
+                    <h3>Brand: {{review.product_brand}}</h3>
+                    <p>{{review.description}}</p>
+                </div>
+                <img src={{review.review_image.url}} class="my-img">
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

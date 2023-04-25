@@ -1,0 +1,29 @@
+{%extends 'main/admin.html'%}
+
+{%block content%}
+    <center>
+        <h1><u>ALL STORES</u></h1>
+        <button class="add-product">
+            <a href="{% url 'add-store'%}">Add New Store</a>
+        </button>
+    </center>
+    <br>
+        {%for store in all_stores%}
+            <div class="my-services">   
+                <div class="desc">
+                    <h2>{{store.city}}</h2>
+                    <h3>Phone Number:{{store.phone_number}}</h3>
+                    <h3>Email:{{store.email_address}}</h3>
+                    <h3>Address:{{store.physical_address}}</h3>
+                    <h3>{{store.basic_desc}}</h3>
+                    <button class="update-btn">
+                        <a href="{% url 'update-store' store.id %}">Update</a>
+                    </button>
+                    <button class="delete-btn">
+                        <a href="{% url 'delete-store' store.id %}">Delete</a>
+                    </button>
+                </div>
+                <img src="{{store.office_pic.url}}" class="team-img">
+            </div>
+        {%endfor%}
+{%endblock%}

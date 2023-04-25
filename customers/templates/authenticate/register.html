@@ -1,0 +1,24 @@
+{%extends 'authenticate/baze.html'%}
+{%block content%}
+    {%if form.errors %}
+        <p>There was an error with your form ...</p>
+    {%endif%}
+    <br><br>
+    <button class="back-btn">
+        <a href="{% url 'index'%}"><i class="fa-solid fa-chevron-left "></i>
+            BACK HOME
+        </a>  
+    </button>
+    <center>
+        <h1><u><b>REGISTER CUSTOMER</b></u></h1>
+        <form action="{% url 'register'%}" method="POST" class="myform">
+            {%csrf_token%}
+            {{form.as_div}}
+            <input type="submit" value="REGISTER" class="my-submit">
+        </form>
+    </center>
+    <div class="div-1">
+        <h3>Already have an account?</h3>
+        <a href="{%url 'login'%}">LOGIN</a>
+    </div>
+{%endblock%}

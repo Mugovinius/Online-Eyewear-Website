@@ -1,0 +1,73 @@
+{%extends 'main/base.html'%}
+{%load static%}
+
+{%block content%}
+    <center>
+        <h1 class="header"><u>OUR PRODUCTS</u></h1>
+    </center>
+    <div class="btn-container">
+        <button class="product-category">
+            <a href="{% url 'all-products'%}">
+                <img src="{% static 'images\download (6).jpeg'%} " class="link-img">
+                <br>
+                All
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'men-glasses'%}">
+                <img src="{% static 'images\63aab89b86056246383dd8bd_cat-07.jpg'%}" class="link-img">
+                <br>
+                Men
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'women-glasses'%}">
+                <img src="{% static 'images\63aab8b1e473f30d29a61bc7_cat-02.jpg'%}" class="link-img">
+                <br>
+                Women
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'kids-glasses'%}">
+                <img src="{% static 'images\63aab8a8f3af99fbff66a69a_cat-01.jpg'%}" class="link-img">
+                <br>
+                Kids
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'sun-glasses'%}">
+                <img src="{% static 'images\6391c1f124d00360bab39239_pr-hover--05-p-800.jpg'%}" class="link-img">
+                <br>
+                Sun Glasses
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'protector-glasses'%}">
+                <img src="{% static 'images\6392e003514f6b735141da7a_pr-hover--07-p-800.jpg'%}" class="link-img">
+                <br>
+                Eye Protector
+            </a>
+        </button>
+        <button class="product-category">
+            <a href="{% url 'computer-glasses'%}">
+                <img src="{% static 'images\63984ca19e600d9a1e0ab835_about--04.jpg'%}" class="link-img">
+                <br>
+                Computer Glasses
+            </a>
+        </button>
+    </div>
+    <div class="products-container">
+        {%for product in products%}
+        <div class="products">
+            <img src={{product.product_image.url}} class="product-img">
+            <h2>Name: {{product.product_name}}</h2>
+            <h3>Category: {{product.category}}</h3>
+            <h3>Price: Kshs {{product.product_price}}</h3>
+            <p>{{product.description}}</p>
+            <button class="add-cart">
+                <a href="{%url 'add-to-cart' product.id %}">Add To Cart</a>
+            </button>
+        </div>
+        {%endfor%}
+    </div>
+{%endblock%}

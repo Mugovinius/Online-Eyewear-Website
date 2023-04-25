@@ -1,0 +1,24 @@
+{% extends 'authenticate/baze.html' %}
+{%load static%}
+{%block content%}
+    <br><br>
+    <button class="back-btn">
+        <a href="{% url 'index'%}"><i class="fa-solid fa-chevron-left "></i>
+            BACK HOME
+        </a>  
+    </button>
+    <center>
+        <form action="" method="POST" class="my-form">
+            {% csrf_token %}
+            <h3 id="header">Username</h3>
+            <input type="text", name="username" class="my-input" placeholder="Enter Username"><br>
+            <h3 id="header">Password</h3>
+            <input type="password" name="password" class="my-input" placeholder="Enter Password"><br>
+            <input type="submit" value="LOGIN" class="my-submit">
+        </form>
+    </center>
+    <div class="div-1">
+        <h3>Don't have an account?</h3>
+        <a href="{%url 'register'%}">SIGN UP</a>
+    </div>
+{%endblock%}

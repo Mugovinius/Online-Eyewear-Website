@@ -1,0 +1,46 @@
+{% extends 'authenticate/home.html' %}
+{%load static%}
+
+{%block content%}
+    <div class="cart-header">
+        <img src="{%static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="cart-img">
+        <h2>Your Cart</h2>
+        <button class="cart-close">
+            <a href="{%url 'index'%}"><i class="fa fa-close fa-2x"></i></a>
+        </button>
+    </div>
+        <div class="cart-items">
+            {%for cart in cart_items %}
+                    <div class="items">
+                        <img src={{cart.product.product_image.url}} class="item-img">
+                        <div class="items-desc">
+                            <p>Product Name: {{cart.product.product_name}}</p>
+                            <p>Product Brand: {{cart.product.product_brand}}</p>
+                            <p>Price: Kshs: {{cart.price}}</p>
+                            <div class="quantity-div">
+                                <p>Quantity: {{cart.quantity}}</p>
+                                <button class="update-quantity">
+                                    <a href="{% url 'update-quantity' cart.id %}" >Update</a>
+                                </button>
+                            </div>
+                            <p>Total: Kshs: {{cart.total}}</p>
+                            <button class="cart-order">
+                                <a href="{% url 'place-order' cart.id %}">Order Product</a>
+                            </button>
+                            <button class="cart-remove">
+                                <a href="{%url 'remove-from-cart' cart.id %}">Remove From Cart</a>
+                            </button>
+                        </div>
+                    </div>
+            {%endfor%}
+                <div class="totals">
+                    <p id="my-total">Total:</p>
+                    <p id="actual-total"> Kshs: {{total}}</p>
+                </div>
+                <button class="order-all">
+                    <a href="{% url 'order-from-cart'%}">Order All</a>
+                </button>
+        </div>
+        
+        
+{%endblock%}

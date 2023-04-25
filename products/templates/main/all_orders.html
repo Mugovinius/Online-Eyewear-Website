@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{%static 'fontawesome-free-6.2.0-web\css\all.min.css'%}">
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'all_orders.css'%}">
+    </head>
+    <body>
+        {%block content%}
+            <div class="cart-header">
+                <img src="{%static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="cart-img">
+                <h2>My Orders</h2>
+                <button class="cart-close">
+                    <a href="{%url 'index'%}"><i class="fa fa-close fa-2x"></i></a>
+                </button>
+            </div>
+            <div class="btn-container">
+                <button class="order-category">
+                    <a href="{%url 'pending-payment'%}"><img src="{% static 'images\download.png'%}" class="link-img">
+                    <br>
+                    Pending Payment
+                    </a>
+                </button>
+                <button class="order-category">
+                    <a href="{%url 'in-transit'%}"><img src="{% static 'images\icons8-deliver-food-64.png'%}" class="link-img">
+                    <br>
+                    In Transit
+                    </a>
+                </button>
+                <button class="order-category">
+                    <a href="{%url 'delivered'%}"><img src="{% static 'images\icons8-delivered-80.png'%}" class="link-img">
+                    <br>
+                    Delivered
+                    </a>
+                </button>
+                <button class="order-category">
+                    <a href="{%url 'review-orders'%}"><img src="{% static 'images\icons8-reviews-64.png'%}" class="link-img">
+                    <br>
+                    Reviews
+                    </a>
+                </button>
+                <button class="order-category">
+                    <a href="{%url 'completed' %}"><img src="{% static 'images\icons8-complete-67.png'%}" class="link-img">
+                    <br>
+                    Completed
+                    </a>
+                </button>
+            </div>
+        {%endblock%}
+        <script src="{%static 'all_orders.js'%}"></script>
+    </body>
+</html>

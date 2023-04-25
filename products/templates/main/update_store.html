@@ -1,0 +1,17 @@
+{%extends 'main/base.html'%}
+
+{%block content%}
+            {%if user.is_authenticated%}
+                    <center>
+                        <h1>UPDATE OFFICE</h1>
+                        <form action="" method=POST enctype="multipart/form-data" class="myform">
+                            {% csrf_token %}
+                            {{ form.as_p}}
+                            <input type="submit" value="Update" class="mysubmit">
+                        </form>
+                    </center>
+            {%else%}
+                <h1>Sorry! You must be Logged In to view this page...</h1>
+                <a href="{% url 'login' %}">Login Here</a>
+            {%endif%}
+{%endblock%}

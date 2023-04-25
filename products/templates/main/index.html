@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+{%load static%}
+{%block content%}
+    <div class="my-header">
+        <img src="{% static 'images\ew4.jpg'%}" class="hero-1">
+        <div class="header-text">
+            <h3>Need Glasses?</h3>
+            <h2>WE'VE GOT YOU COVERED</h2>
+            <h2>AT ONLINE EYEWEAR SHOP</h2>
+            <p>Get any type of glasses from sunglasses to Lenses.</p>
+        </div>
+    </div>
+    <div class="our-services">
+        <h2><u>OUR PRODUCTS</u></h2>
+        <form method=POST action ="{% url 'search-products'%}">
+            {% csrf_token%}
+            <input type="search" name="searched" class="search-input" placeholder="Search Products">
+            <br><br>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+    </div>
+
+    <div class="products-container">
+        {%for product in products%}
+        <div class="products">
+            <img src={{product.product_image.url}} class="product-img">
+            <h2>Name: {{product.product_name}}</h2>
+            <h3>Category: {{product.category}}</h3>
+            <h3>Price: Kshs {{product.product_price}}</h3>
+            <p>{{product.description}}</p>
+            {%if user.is_authenticated%}
+                <button class="add-cart">
+                    <a href="{%url 'add-to-cart' product.id %}">Add To Cart</a>
+                </button>
+            {%else%}
+                <button class="add-cart">
+                    <a href="{%url 'login'%}">Add To Cart</a>
+                </button>
+            {%endif%}
+        </div>
+        {%endfor%}
+    </div>
+    <button class="more-products">
+        <a href = "{% url 'all-products'%}">
+            Browse More Products
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </button>
+    <br><br><br><br><br>
+    <div class="our-services">
+        <h2><u>OUR SERVICES</u></h2>
+    </div>
+    <div class="services-container">
+        {%for service in services%}
+            <div class="services">
+                <h2>{{service.service_name}}</h2>
+                <img src={{service.service_image.url}} class="service-img">
+                <p>{{service.description}}</p>
+            </div>
+        {%endfor%}
+    </div>
+    <div class="our-services">
+        <h2><u>TESTIMONIALS</u></h2>
+        <h3>Experience of our customers.</h3>
+    </div>
+    <div class="testimonial-container">
+        {%for review in reviews%}
+            <div class="my-testimonials">
+                <img src={{review.review_image.url}} class="testimonial-img">
+                <div class="indiv-testimonial">
+                    <p>{{review.customer.username}}</p>
+                    <p>{{review.description}}</p>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+    
+{%endblock%}

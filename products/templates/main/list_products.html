@@ -1,0 +1,32 @@
+{%extends 'main/admin.html'%}
+{%load static%}
+
+{%block content%}
+    <div class="all-lists">
+        <center>
+            <h1><u>ALL PRODUCTS</u></h1>
+            <button class="add-product">
+                <a href="{% url 'add-product'%}">Add New Product</a>
+            </button>
+        </center>
+        <br>
+        {%for product in products%}
+            <div class="my-services">
+                <div class="desc">
+                    <h2>Name:{{product.product_name}}</h2>
+                    <h3>Brand:{{product.product_brand}}</h3>
+                    <h3>Price:Kshs{{product.product_price}}</h3>
+                    <h3>Available Stock:{{product.product_stock}} Pieces</h3>
+                    <p>{{product.description}}</p>
+                    <button class="update-btn">
+                        <a href="{%url 'update-product' product.id%}">Update Product</a>
+                        </button>
+                    <button class="delete-btn">
+                        <a href="{% url 'delete-product' product.id%}">Delete Product</a>
+                    </button>
+                </div>
+                <img src={{product.product_image.url}} class="my-img">
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

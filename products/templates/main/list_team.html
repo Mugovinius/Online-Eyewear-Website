@@ -1,0 +1,29 @@
+{%extends 'main/admin.html'%}
+
+{%block content%}
+<div class="all-lists">
+    <center>
+        <h1><u>TEAM MEMBERS</u></h1>
+        <button class="add-product">
+            <a href="{% url 'add-team'%}">Add New Member</a>
+        </button>
+    </center>
+    <br>
+        {%for team in teams%}
+            <div class="my-services">   
+                <div class="desc">
+                    <h2>{{team.profile_name}}</h2>
+                    <h3>Occupation:{{team.profile_occupation}}</h3>
+                    <h3>Quote:{{team.quote}}</h3>
+                    <button class="update-btn">
+                        <a href="{% url 'update-team' team.id %}">Update</a>
+                    </button>
+                    <button class="delete-btn">
+                        <a href="{% url 'delete-team' team.id %}">Delete</a>
+                    </button>
+                </div>
+                <img src="{{team.profile_image.url}}" class="team-img">
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}

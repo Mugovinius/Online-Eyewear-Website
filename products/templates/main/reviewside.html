@@ -1,0 +1,12 @@
+{% extends 'authenticate/home.html'%}
+
+{%block content%}
+    <center>
+        <h2>Place Order</h2>
+        <form method="post"action="" enctype="multipart/form-data" class="myform">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Review Order", class="mysubmit">
+        </form>
+    </center>
+{%endblock%}

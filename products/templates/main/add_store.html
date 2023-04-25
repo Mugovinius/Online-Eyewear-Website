@@ -1,0 +1,27 @@
+{%extends 'main/base.html'%}
+
+{%block content%}
+    <center>
+        {% if user.is_authenticated%}
+                <center>
+                    <h1>ADD NEW STORE </h1>
+                    {% if submitted%}
+                        New Store was added
+                        Succesfully !!
+                        <a href="{% url 'index'%}" style="text-decoration:none;">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            Back
+                        </a>
+                    {%else%}                
+                        <form action="" method=POST enctype="multipart/form-data" class="myform">
+                            {% csrf_token %}
+                            {{ form.as_p}}
+                            <input type="submit" value="Submit" class="mysubmit">
+                        </form>
+                    {%endif%}
+                </center>
+            {%else%}
+                <h1>Sorry! You must be Logged In to view this page...</h1>
+                <a href="{% url 'login' %}">Login Here</a>
+            {%endif%}
+{%endblock%}

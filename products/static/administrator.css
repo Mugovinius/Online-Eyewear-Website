@@ -1,0 +1,102 @@
+html{
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+
+}
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+    left: 0;
+    background-color: black;
+    position: relative;
+    z-index: 1;
+}
+.my-logo{ 
+    position: relative;
+    left: 20px;
+    top:5px;
+}
+.logo{
+    max-width: 50%;
+    border-radius: 50%;
+}
+.links li{
+    display: inline-block;
+    padding: 20px;
+}
+.links a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.nav-toggle{
+    display: none;
+    color: #fff;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+    transform: translate(-100%);
+    transition: all 0.3s linear;
+    background: black;
+    z-index: 2;
+}
+.show-sidebar{
+    transform: translate(0);
+}
+.mylinks a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: left;
+}
+.mylinks li{
+    list-style-type: none;
+    padding: 15px;
+}
+.our-logo{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.close-btn{
+    color: #fff;
+    background:transparent;
+    border: transparent;
+}
+.back-btn{
+    color: #fff;
+    background:transparent;
+    border: transparent;
+}
+@media screen and (max-width:992px) {
+    nav{
+        justify-content: space-between;
+    }
+    .nav-toggle{
+        display: block;
+        border: transparent;
+        background: transparent;
+        margin: 10px;
+    }
+    .logo{
+        max-width: 40%;
+    }
+    .links{
+        display: none;
+    }
+}
+@media screen and (max-width:550px) {
+    .sidebar{
+        width: 100%;
+    }
+}

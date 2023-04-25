@@ -1,0 +1,29 @@
+{%extends 'main/orders.html'%}
+{%load static%}
+
+{%block content%}
+    <div class="cart-items">
+        {%for order in order_item %}
+            <div class="items">
+                <img src={{order.product.product_image.url}} class="item-img">
+                <div class="items-desc">
+                    <p>Product Name: {{order.product.product_name}}</p>
+                    <p>Product Brand: {{order.product.product_brand}}</p>
+                    <p>Price: Kshs: {{order.price}}</p>
+                    <p>Quantity: {{order.quantity}}</p>
+                    <p>Total: Kshs: {{order.total}}</p>
+                    <p>Destination Details: {{order.order.shipping_details}}</p>
+                    <p>Shipping Details: {{order.shipping_status}}</p>
+                    <p>Payment Status: {{order.payment_status}}</p>
+                    <button class="update-btn">
+                        <a href="{%url 'update-delivered' order.id %}">Mark Arrived Parcel</a>
+                    </button>
+                </div>
+            </div>
+            {% empty %}
+            <center>
+                <p>No Current Orders</p>
+            </center>
+        {%endfor%}
+    </div>
+{%endblock%}

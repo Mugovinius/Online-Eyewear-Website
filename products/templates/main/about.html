@@ -1,0 +1,93 @@
+{%extends 'main/utilities-about.html'%}
+{%load static%}
+{%block content%}
+<img src="{% static 'images\62fa8d7d5e03c065b4184a4d_about-hero-bg-image-architect-webflow-ecommerce-template-p-1600.jpg' %}" class="about-hero"/>
+<div class="about-header">
+    <h4>ABOUT US</h4>
+    <h1>ABOUT OUR STORE</h1>
+    <p>We connect quality manufactures of spectacles to millions of customers around the world. Our
+        customers enjoy faster delivery of quality glasses at affordable prices all over the world.
+    </p>
+    <button class="about-btn">
+        <a href="{%url 'contact'%}">GET IN TOUCH</a>
+    </button>
+</div>
+<div class="story-container">
+    <div class="our-story">
+        <h4>OUR STORY</h4>
+        <h2>WE STARTED BACK IN 2018</h2>
+        <p class="vision">
+            Our mission is to provide customers with convenient and affordable access to high quality eyewear products,
+            while offering exceptional customer service and an enjoyable shopping experience.
+        </p>
+    </div>
+    <img src="{% static 'images\63aab8c103bbda0ee2524edb_cat-03.jpg'%}" class="story-img">
+</div>
+<div class="story-container1">
+    <img src="{% static 'images\63984dfec619448515f4b50b_pr-detail-03.jpg'%}" class="story-img">
+    <div class="our-story">
+        <h4>HOW WE STARTED</h4>
+        <h2>ALL STARTED WITH AN IDEA</h2>
+        <p>Our vision is to be the go-to destination for anyone in need of eyewear,offering a wide selection of products
+            for every style and budget.
+        </p>
+        <button class="about-btn">
+            <a href="{%url 'contact'%}">GET IN TOUCH</a>
+        </button>
+    </div>
+</div>
+<br><br>
+<div class="our-offices">
+        <h3>OUR TEAM</h3>
+        <h1>MEET OUR TEAM</h1>
+</div>
+<div class="team-container">
+    {%for member in teams%}
+        <div class="indiv-team">
+            <img src={{member.profile_image}} class="team-img"/>
+            <h4>{{member.profile_occupation}}</h4>
+            <h2>{{member.profile_name}}</h2>
+            <p>{{member.quote}}</p>
+            <hr>
+        </div>
+    {%endfor%}
+</div>
+<div class="our-services">
+    <h2><u>OUR SERVICES</u></h2>
+</div>
+<div class="services-container">
+    {%for service in services%}
+        <div class="services">
+            <h2>{{service.service_name}}</h2>
+            <img src={{service.service_image.url}} class="service-img">
+            <p>{{service.description}}</p>
+        </div>
+    {%endfor%}
+</div>
+<div class="our-offices">
+    <h2>OUR STORES</h2>
+    <h1>VISIT OUR STORES</h1>
+</div>
+{%for store in stores%}
+    <div class="office-container">
+        <div class="office-desc">
+            <h1>{{store.city}}</h1>
+            <p>{{store.basic_desc}}</p>
+            <h2>
+                <i class="fa-solid fa-phone fa-2x"></i>
+                {{store.phone_number}}
+            </h2>
+            <h2>
+                <i class="fa-solid fa-envelope fa-2x"></i>
+                {{store.email_address}}
+            </h2>
+            <h2>
+                <i class="fa-solid fa-location-dot fa-2x"></i>
+                {{store.physical_address}}
+            </h2>
+        </div>
+        <img src={{store.office_pic}} class="office-pic">
+    </div>
+    <br>
+{%endfor%}
+{%endblock%}

@@ -1,0 +1,11 @@
+{% extends 'authenticate/home.html'%}
+
+{%block content%}
+    <center>
+        <form method="post" class='myform'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Update" class="mysubmit">
+        </form>
+    </center>
+{%endblock%}

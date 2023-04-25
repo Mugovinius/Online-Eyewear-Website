@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--fontawesome-->
+        <link rel="stylesheet" href="{%static 'fontawesome-free-6.2.0-web\css\all.min.css'%}">
+        <!--stylesheet-->
+        <link rel="stylesheet" href="{% static 'administrator.css'%}">
+    </head>
+    <body>
+        {%block content%}
+            <center>
+                <h1>ADMINISTRATOR HUB</h1>
+            </center>
+            <button class="back-btn">
+                <a href="{% url 'index'%}"><i class="fa-solid fa-arrow-left fa-2x"></i></a>
+            </button>
+            <nav>
+                <div class="my-logo">
+                    <img src="{% static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="logo">
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="{% url 'customers'%}">CUSTOMERS</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list-products'%}">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-orders'%}">ORDERS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-payments'%}">PAYMENTS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-reviews'%}">REVIEWS</a>
+                    </li>
+                </ul>
+                <button class="nav-toggle">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
+            </nav>
+            <aside class="sidebar">
+                <div class="our-logo">
+                    <img src="{% static 'images\online-eyewear-shop-high-resolution-logo-white-on-black-background.png'%}" class="logo">
+                    <button class="close-btn">
+                        <i class="fa fa-close fa-2x"></i>
+                    </button>
+                </div>
+                <ul class="mylinks">
+                    <li>
+                        <a href="{% url 'customers'%}">CUSTOMERS</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list-products'%}">PRODUCTS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-orders'%}">ORDERS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-payments'%}">PAYMENTS</a>
+                    </li>
+                    <li>
+                        <a href="{%url 'admin-reviews'%}">REVIEWS</a>
+                    </li>
+                </ul>
+            </aside>
+        {%endblock%}
+        <script src="{% static 'administrator.js'%}"></script>
+    </body>
+</html>
