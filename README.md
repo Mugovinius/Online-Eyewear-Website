@@ -1,6 +1,6 @@
 # Eyewear Online Shop
 
-This is the Group 10 end of semester project. It involves a platform to buy eyewear products online.
+This is an e-commerce website that involves a platform to buy eyewear products online.
 
 ## Requirements 
 '''
